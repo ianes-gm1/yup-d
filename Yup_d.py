@@ -41,7 +41,6 @@ def Download_Process(URL, O_D) :
 
 
 if __name__ == "__main__":
-     print("mama")
      Output_location = input(r"output location : ")
      URL = input(r"URL : ")
      Download_Process(URL, Output_location)
