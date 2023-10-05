@@ -1,9 +1,13 @@
 
-#Yup-d ver. 1.0
+#Yup-d ver. 1.1
 
 from pytube import *
 import subprocess
 import os
+
+def title_swap(title):
+     new_title = title.translate(str.maketrans('', '', "|\?/_:,'"))
+     return new_title
 
 def Download_Process(URL, O_D) :
      
@@ -21,7 +25,7 @@ def Download_Process(URL, O_D) :
           video.streams.get_highest_resolution().download()
 
 
-          subprocess.call("ffmpeg -i " + '"' + video.title + ".mp4" + '"' +" -vn out.mp3" + '"', shell=True)
+          subprocess.call("ffmpeg -i " + '"' + title_swap(video.title) + ".mp4" + '"' +" -vn out.mp3" + '"', shell=True)
           subprocess.call("del " + '"' + video.title + ".mp4" + '"', shell=True)
           
           subprocess.call("ffmpeg -i out.mp3 -i " + '"' + video.thumbnail_url + '"' + " -c copy -map 0 -map 1 in.mp3" ,shell=True)
@@ -36,12 +40,7 @@ def Download_Process(URL, O_D) :
           print("move " + '"' + video.title + ".mp3" + '" ' + O_D)
           subprocess.call("move " + '"' + video.title + ".mp3" + '" ' + O_D ,shell=True)
 
-
-          
-
-
 if __name__ == "__main__":
      Output_location = input(r"output location : ")
      URL = input(r"URL : ")
      Download_Process(URL, Output_location)
-     
