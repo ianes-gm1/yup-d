@@ -1,7 +1,7 @@
 ![LOGO](logo.png)
 
 ------------
-A simple program made out of Python - [Pytube][1] library
+A very serious program - made out of Python [Pytube][1] library
 with an simple GUI
 
 for downloading YouTube playlists from an url in MP3 format
