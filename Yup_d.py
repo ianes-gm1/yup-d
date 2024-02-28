@@ -20,9 +20,9 @@ parser.add_argument(dest='Output_location', help=r"Output location e.g.C:\Users\
 parser.add_argument(dest='Format', help="Formats -type of format for your download / Formats available- MP3;MP4 ")
 args = parser.parse_args()
 
-#gets rid off all the Haruf al-Hija'a al-Arabiyyah and the bad stuff
+#gets rid off all the bad stuff
 def title_swap(title):
-     new_title = title.translate(str.maketrans('', '', "|\?/_:,#*()[]{}'أ ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن ه و ي"))
+     new_title = title.translate(str.maketrans('', '', "|\?/_:,#*()[]{}'"))
      return new_title
 
 #believe this is self explanatory
