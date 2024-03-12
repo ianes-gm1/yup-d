@@ -117,7 +117,7 @@ class App:
         print(self.form)
         
         root.title("Yup-d "+" ver1.1" + " - Downloading - please wait")
-        #os.system('python Yup_d.py '+ URL +' '+ self.OUTPUT_DIRECTORY +' '+ FORMAT)
+        os.system('python Yup_d.py '+ URL +' '+ self.OUTPUT_DIRECTORY +' '+ FORMAT)
         print('python Yup_d.py '+ URL +' '+ self.OUTPUT_DIRECTORY +' '+ FORMAT)
         root.title("Yup-d "+ "" +" ver1.1")
     
