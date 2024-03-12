@@ -2,7 +2,10 @@
 
 SCRIPT_NAME = "Yup_d - GUI.py"
 ICON_FILE = icon.ico
-PYINSTALLER_FLAGS = --onefile --windowed --icon=$(ICON_FILE)
+DIRECTORY= ""
+PYINSTALLER_FLAGS = --onefile --windowed --clean --console --icon=$(ICON_FILE) --distpath=$(DIRECTORY)
 build:
 	@pyinstaller $(PYINSTALLER_FLAGS) $(SCRIPT_NAME)
-.PHONY: build
+install_dependencies:
+	pip install -r requirements.txt
+.PHONY: install_dependencies build
