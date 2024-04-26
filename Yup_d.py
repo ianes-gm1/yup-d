@@ -22,7 +22,7 @@ args = parser.parse_args()
 
 #gets rid off all the bad stuff
 def title_swap(title):
-     new_title = title.translate(str.maketrans('', '', "|\?/_:,#*()[]{}'"))
+     new_title = title.translate(str.maketrans('', '', "|\?/_:*"))
      return new_title
 
 #believe this is self explanatory
